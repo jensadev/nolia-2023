@@ -1,0 +1,99 @@
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --step--2: clamp(0.63rem, calc(0.84rem + -0.27vw), 0.78rem);
+    --step--1: clamp(0.88rem, calc(0.96rem + -0.09vw), 0.94rem);
+    --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+    --step-1: clamp(1.35rem, calc(1.2rem + 0.73vw), 1.77rem);
+    --step-2: clamp(1.62rem, calc(1.31rem + 1.53vw), 2.5rem);
+    --step-3: clamp(1.94rem, calc(1.39rem + 2.77vw), 3.53rem);
+    --step-4: clamp(2.33rem, calc(1.41rem + 4.63vw), 5rem);
+    --step-5: clamp(2.8rem, calc(1.32rem + 7.42vw), 7.07rem);
+
+    --color-dark: #222;
+    --color-light: #f0f0f0;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    position: relative;
+    display: grid;
+    grid-template-areas: 'stack';
+    place-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--step-1);
+}
+
+h1 {
+    font-size: var(--step-4);
+}
+h2 {
+    font-size: var(--step-3);
+}
+header {
+    z-index: 10;
+    grid-area: stack;
+    display: grid;
+    place-items: center;
+}
+img {
+    height: auto;
+    width: 100%;
+}
+.plax {
+    position: relative;
+    grid-area: stack;
+    width: 80vw;
+    height: 60vh;
+}
+
+.container {
+    width: min(60ch, 100vw - 4rem);
+    margin-inline: auto;
+}
+
+.layer-1 {
+    background: url(../images/layer_1.png);
+    z-index: 1;
+    min-height: 553px;
+    min-width: 965px;
+    position: relative;
+}
+
+.layer-2 {
+    background: url(../images/layer_2.png);
+    z-index: 2;
+    min-height: 289px;
+    min-width: 690px;
+    left: 136px;
+    top: 131px;
+    position: absolute;
+}
+
+.layer-3 {
+    background: url(../images/layer_3.png);
+    z-index: 3;
+    min-height: 230px;
+    min-width: 576px;
+    top: 160px;
+    left: 194px;
+    position: absolute;
+}
+
+.layer-1,
+.layer-2,
+.layer-3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.2s linear;
+    width: 80%;
+    height: 80%;
+}
